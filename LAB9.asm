@@ -41,14 +41,33 @@ fmt db "%d",0
 
 .code 
 
+
 extrn printf:near
 extrn scanf:near
-
+extrn exit: near
+	
 public main 
 main proc 
 
 push offset msg
 call printf 
+
+push offset msg1
+call printf 
+add esp, 4
+lea eax, [ebp-4]
+
+push eax 
+push offset	fmt 
+call scanf 
+
+add esp, 8
+mov eax, [ebp-4]
+push eax
+
+add esp, 8
+push 0
+call exit
 
 
 
@@ -56,6 +75,7 @@ RET
 main endp
 
 lector proc
+
 
 lector endp
 

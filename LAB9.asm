@@ -47,7 +47,10 @@ extrn scanf:near
 extrn exit: near
 	
 public main 
-main proc 
+main proc
+push ebp
+mov ebp, esp
+mov edx, 0
 
 push offset msg
 call printf 

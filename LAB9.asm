@@ -17,3 +17,46 @@ includelib legacy_stdio_definitions.lib
 
 
 .data
+arrI  DWORD 12 DUP(0,0,0,0,0,0,0,0,0,0,0,0)
+arrF DWORD 12 DUP(0,0,0,0,0,0,0,0,0,0,0,0)
+
+
+msg BYTE "Bienvenido a la calculadora de IVA",0Ah,0
+msg1 BYTE "Ingresa el monto a facturar del mes de enero:",0Ah,0
+msg2 BYTE "Ingresa el monto a facturar del mes de febrero:",0Ah,0
+msg3 BYTE "Ingresa el monto a facturar del mes de marzo:",0Ah,0
+msg4 BYTE "Ingresa el monto a facturar del mes de abril:",0Ah,0
+msg5 BYTE "Ingresa el monto a facturar del mes de mayo:",0Ah,0
+msg6 BYTE "Ingresa el monto a facturar del mes de junio:",0Ah,0
+msg7 BYTE "Ingresa el monto a facturar del mes de julio:",0Ah,0
+msg8 BYTE "Ingresa el monto a facturar del mes de agosto:",0Ah,0
+msg9 BYTE "Ingresa el monto a facturar del mes de septiembre:",0Ah,0
+msg10 BYTE "Ingresa el monto a facturar del mes de octubre:",0Ah,0
+msg11 BYTE "Ingresa el monto a facturar del mes de noviembre:",0Ah,0
+msg12 BYTE "Ingresa el monto a facturar del mes de diciembre:",0Ah,0
+
+fmt db "%d",0
+
+
+
+.code 
+
+extrn printf:near
+extrn scanf:near
+
+public main 
+main proc 
+
+push offset msg
+call printf 
+
+
+
+RET                 
+main endp
+
+lector proc
+
+lector endp
+
+end
